@@ -29,6 +29,8 @@ alias cdgb="cd $HOME/sources/own/gun-bot"
 alias cdwsf="cd $HOME/sources/kodde/workspace-web"
 alias cdsf="cd $HOME/sources/kodde/spark-app"
 alias cdsb="cd $HOME/sources/kodde/spark-api"
+alias cddot="cd $HOME/sources/own/dotfiles"
+
 alias yrd="yarn run dev"
 alias yrb="yarn run build"
 alias yrl="yarn run lint"
@@ -37,6 +39,7 @@ alias yrtdd="yarn run tdd"
 alias yru="yarn run unit"
 alias startmssql="cd ~/sources/devserver/mssql && docker-compose up -d && cd -"
 alias startmongo="cdds && docker-compose up -d && cd -"
+alias startlecomvpn="sudo openvpn --config $HOME/vpn-lecom/lecom.ovpn"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
