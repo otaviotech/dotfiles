@@ -39,6 +39,20 @@ Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'mxw/vim-jsx'
 
+Plugin 'prettier/vim-prettier'
+
+Plugin 'elixir-lang/vim-elixir'
+
+Plugin 'slashmili/alchemist.vim'
+
+Plugin 'suy/vim-context-commentstring'
+
+Plugin 'tpope/vim-commentary'
+
+Plugin 'junegunn/fzf.vim'
+
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
 call vundle#end()
 filetype plugin indent on
 
@@ -77,7 +91,12 @@ let g:user_emmet_leader_key='<C-y>'
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
-let g:hardtime_default_on = 1
+"let g:hardtime_default_on = 1
 
 :map ;; <S-A>;<Esc>
+let g:NERDCustomDelimiters={
+	\ 'javascript': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+\}
 
+au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+au BufRead,BufNewFile *.eex set filetype=eelixir
