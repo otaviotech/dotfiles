@@ -40,12 +40,13 @@ alias yrs="yarn run start"
 alias yrtdd="yarn run tdd"
 alias yru="yarn run unit"
 alias startmssql="cd ~/sources/devserver/mssql && docker-compose up -d && cd -"
+alias startpostgres="cd ~/sources/devserver/postgres && docker-compose up -d && cd -"
 alias startmongo="cdds && docker-compose up -d && cd -"
 alias startlecomvpn="sudo openvpn --config $HOME/vpn-lecom/terceiros.ovpn"
 
 # Docker
-alias dps="docker ps"
-alias dcup="docker compose up -d"
+alias dps="docker ps --format \"table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}\""
+alias dcup="docker-compose up -d"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
