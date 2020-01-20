@@ -31,6 +31,8 @@ alias cdlb="cd $HOME/sources/kodde/lupa/api"
 alias cdlf="cd $HOME/sources/kodde/lupa/web"
 alias cdsf="cd $HOME/sources/kodde/spark-app"
 alias cdsb="cd $HOME/sources/kodde/spark-api"
+alias cdaf="cd $HOME/sources/kodde/ago/web"
+alias cdab="cd $HOME/sources/kodde/ago/api"
 alias cddot="cd $HOME/sources/own/dotfiles"
 
 alias yrd="yarn run dev"
@@ -47,6 +49,7 @@ alias startlecomvpn="sudo openvpn --config $HOME/vpn-lecom/terceiros.ovpn"
 # Docker
 alias dps="docker ps --format \"table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}\""
 alias dcup="docker-compose up -d"
+alias dsa='docker stop $(docker ps -q)'
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
