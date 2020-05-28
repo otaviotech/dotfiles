@@ -10,6 +10,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+EDITOR="vim"
 SOURCES_ROOT="$HOME/sources"
 DOTFILES_ROOT="$SOURCES_ROOT/own/dotfiles"
 
@@ -74,26 +75,20 @@ alias dsa='docker stop $(docker ps -q)'
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
+# Node version manager
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  source "$NVM_DIR/nvm.sh"
 
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+  function __nvmrc_on_cd() {
+    [[ -f "./.nvmrc" ]] && nvm use
+  }
 
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+  chpwd_functions=(${chpwd_functions[@]} "__nvmrc_on_cd")
+
+  # If the shell loads in an .nvmrc folder
+  [[ -f "./.nvmrc" ]] && __nvmrc_on_cd
+fi
 
 export ANDROID_SDK_ROOT=$HOME/Android/Sdk
 
@@ -101,5 +96,12 @@ export PATH="$PATH:`yarn global bin`:/snap/bin"
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:/opt/maven/bin
 
+# Jabba (Java version manager)
 [ -s "/home/otavio/.jabba/jabba.sh" ] && source "/home/otavio/.jabba/jabba.sh"
+
+# Microsoft AppCenter
+# begin appcenter completion
+. <(appcenter --completion)
+# end appcenter completion

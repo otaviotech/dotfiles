@@ -1,6 +1,7 @@
 set nocompatible
 filetype on
 filetype plugin on
+set guifont=Fira Code
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
