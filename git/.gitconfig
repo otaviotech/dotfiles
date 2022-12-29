@@ -1,7 +1,7 @@
 [user]
 	name = Otávio Araújo
 	email = otaviotech@gmail.com
-	signingkey = /Users/otavio/.ssh/id_rsa.pub
+	signingkey = 423E36B8AD4DE999
 [commit]
 	gpgsign = true
 [tag]
@@ -19,5 +19,3 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-[gpg]
-	format = ssh

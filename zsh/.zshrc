@@ -7,8 +7,9 @@ plugins=(
   git-flow
   docker
 #  kubectl # https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
-#  zsh-better-npm-completion
+  zsh-better-npm-completion
 #  zsh-vi-mode
+  zsh-autosuggestions
 )
 
 ZSH_DISABLE_COMPFIX=true
@@ -28,7 +29,7 @@ source $ZSH/oh-my-zsh.sh
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Start tmux instad of normal zsh.
-if [ "$TMUX" = "" ]; then tmux; fi
+if [ "$TMUX" = "" ]; then tmux attach || tmux new -s main; fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -39,3 +40,5 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src

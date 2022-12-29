@@ -16,6 +16,7 @@ alias cd....='cd ../../../'
 alias cd.....='cd ../../../../'
 
 # Commands defaults
+alias c='clear'
 alias l='exa --all --long --git --no-time --header --icons --colour-scale --classify'
 alias v='nvim'
 alias vi='nvim'
