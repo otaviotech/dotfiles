@@ -1,9 +1,7 @@
 window:
   opacity: 0.9
   decorations: buttonless
-  # padding:
-  #   x: 4
-  #   y: 0 
+  startup_mode: Maximized
 
 font:
   size: 14.0
@@ -17,5 +15,3 @@ font:
 
   normal:
     family: "MesloLGS NF"
-      
-
