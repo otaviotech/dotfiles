@@ -1,16 +1,6 @@
 # Dotfiles
 
-## Stow
-
-```
-make stow
-```
-
-## Unstow
-
-```
-make unstow
-```
+These are my workspace day to day preferences.
 
 # Install
 
@@ -19,9 +9,12 @@ Some software are not very simple to install via shell, so I split the proccess 
 1. Run the automated installation. This will setup almost everything.
 
 ```shell
-git clone https://github.com/otaviotech/dotfiles.git ~/dotfiles && \
+git clone https://github.com/otaviotech/dotfiles.git ~/dotfiles
+
 cd ~/dotfiles
+
 ./install-macos.sh
+
 cd -
 ```
 
