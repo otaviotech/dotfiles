@@ -7,8 +7,12 @@ keymap.set("i", "jk", "<ESC>") -- exit insert mode by pressing jk
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
+-- save using C-s
+keymap.set("n", "<C-s>", ":w<CR>")
+keymap.set("i", "<C-s>", "<Esc>:w<CR>")
+
 -- delete single character without copying into register
-keymap.set("n", "x", '"_x')
+keymap.set("n", "<leader>x", '"_x')
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>") -- increment

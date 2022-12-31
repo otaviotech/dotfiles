@@ -36,6 +36,7 @@ alias cdpod="cd $SOURCES_ROOT/boticario/pod"
 alias cdpodb="cd $SOURCES_ROOT/boticario/pod-backend"
 alias cdtf="cd $SOURCES_ROOT/boticario/tracking-frontend"
 alias cdtb="cd $SOURCES_ROOT/boticario/tracking-backend"
+alias cdigc="cd $SOURCES_ROOT/oss/instagram-clone"
 
 
 # Yarn

@@ -22,6 +22,6 @@ transparent.setup({
 local status, _ = pcall(vim.cmd, "hi NvimTreeNormal guibg=NONE ctermbg=NONE")
 
 if not status then
-  print("Make NvimTree transparent failed!")
-  return
+	print("Make NvimTree transparent failed!")
+	return
 end
