@@ -14,7 +14,8 @@ vim neovim \
 	wget \
 	git gh \
 	stow \
-	tmux exa bat ripgrep \
+	tmux exa bat eth-p/software/bat-extras-prettybat \
+	ripgrep \
 	gnupg >>install.log
 
 # Install Google Chrome

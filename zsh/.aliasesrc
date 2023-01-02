@@ -68,3 +68,6 @@ alias k="kubectl"
 
 alias mypublicip='curl ifconfig.me'
 alias mylocalip='ipconfig getifaddr en1'
+
+# Easier HTTP requests
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do\n\talias "${method}"="lwp-request -m '${method}'"\ndone
