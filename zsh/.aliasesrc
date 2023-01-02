@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Shortcuts
 alias reloadrc='source ~/.zshrc'
 alias editrc='vim ~/.zshrc'
@@ -25,19 +27,11 @@ alias which='type -p'
 alias cat='bat'
 
 # Common directories
-alias cdifc="cd $SOURCES_ROOT/own/study/node/ifc"
 alias cdd="cd $HOME/Downloads"
 alias cdsrc="cd $SOURCES_ROOT"
-alias cdhf="cd $SOURCES_ROOT/boticario/home"
-alias cdpf="cd $SOURCES_ROOT/boticario/produtos-frontend"
-alias cdpb="cd $SOURCES_ROOT/boticario/produtos-backend"
-alias cdff="cd $SOURCES_ROOT/boticario/facilita-frontend"
-alias cdpod="cd $SOURCES_ROOT/boticario/pod"
-alias cdpodb="cd $SOURCES_ROOT/boticario/pod-backend"
-alias cdtf="cd $SOURCES_ROOT/boticario/tracking-frontend"
-alias cdtb="cd $SOURCES_ROOT/boticario/tracking-backend"
+alias cdcb="cd $SOURCES_ROOT/boticario/campaigns/campaigns-backend"
+alias cdcf="cd $SOURCES_ROOT/boticario/campaigns/campaigns-frontend"
 alias cdigc="cd $SOURCES_ROOT/oss/instagram-clone"
-
 
 # Yarn
 alias yrd="yarn run dev"
@@ -70,4 +64,6 @@ alias mypublicip='curl ifconfig.me'
 alias mylocalip='ipconfig getifaddr en1'
 
 # Easier HTTP requests
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do\n\talias "${method}"="lwp-request -m '${method}'"\ndone
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+	alias "${method}"="lwp-request -m '${method}'"
+done
