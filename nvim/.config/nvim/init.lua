@@ -1,4 +1,2 @@
-require("otaviotech.plugins.plugins-setup")
-require("otaviotech.core.options")
-require("otaviotech.core.keymaps")
-require("otaviotech.core.colorscheme")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
