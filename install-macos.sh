@@ -6,63 +6,62 @@ set -o pipefail # don't hide errors within pipes
 
 # Install homebrew (https://brew.sh)
 echo "Installing homebrew..."
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh >>install.log
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 
 echo "Installing base packages..."
-brew install zsh \ 
-vim neovim \
+brew install zsh \
+	vim neovim \
 	wget \
 	git gh \
 	stow \
 	tmux exa bat eth-p/software/bat-extras-prettybat \
 	ripgrep \
-	gnupg >>install.log
+	gnupg \
+	fx jq yq \
+	chezmoi
 
 # Install Google Chrome
 echo "Installing Google Chrome..."
-brew install --cask google-chrome >>install.log
+brew install --cask google-chrome
 
 # Install raycast (www.raycast.com)
 echo "Installing raycast..."
-brew install --cask raycast >>install.log
+brew install --cask raycast
 
 # Make zsh the default shell
 echo "Making zsh the default shell..."
-chsh -s $(which zsh) >>install.log
+chsh -s $(which zsh)
 
 # Install oh-my-zsh (unnatended install)
 echo "Installing oh-my-zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended >>install.log
-
-# Install NVM (https://github.com/nvm-sh/nvm)
-echo "Installing NVM..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Install zsh plugin: zsh-completions (https://github.com/zsh-users/zsh-completions)
 echo "Installing zsh plugin: zsh-completions..."
-git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions >>install.log
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 
 # Install zsh plugin: zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
 echo "Installing zsh plugin: zsh-autosuggestions..."
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions >>install.log
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # Install tmux plugin manager: tpm (https://github.com/tmux-plugins/tpm)
 echo "Installing tmux plugin manager(tpm)..."
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm >>install.log
-
-# VIM / NVIM
-
-## Install Packer (https://github.com/wbthomason/packer.nvim)
-echo "Installing Packer..."
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim >>install.log
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 ## Instal zsh plugin zsh-better-npm-completion (https://github.com/lukechilds/zsh-better-npm-completion)
 echo "Installing zsh plugin: zsh-better-npm-completion..."
-git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion >>install.log
+git clone https://github.com/lukechilds/zsh-better-npm-completion ~/.oh-my-zsh/custom/plugins/zsh-better-npm-completion
+
+## Instal zsh plugin zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Install powerlevel10k
 echo "Installing powerlevel10k..."
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k >>install.log
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# Install NVM (https://github.com/nvm-sh/nvm)
+echo "Installing NVM..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
 # Set mac defaults
 echo "Setting macOS defaults..."
@@ -112,16 +111,8 @@ echo "Restarting macOS UI and Dock..."
 killall Dock
 killall SystemUIServer
 
-# Clone dotfile-secrets (private files)
-echo "Cloning dotfile-secrets..."
-git clone https://github.com/otaviotech/dotfile-secret.git ~/dotfiles-secret >>install.log
-
-# Stow (symlink) files back (https://www.gnu.org/software/stow)
-echo "Stowing public dotfiles..."
-cd ~/.dotfiles && make stow && cd - >>install.log
-
-echo "Stowing secret dotfiles..."
-cd ~/.dotfiles-secret && make stow && cd - >>install.log
+# Create dotfiles symlinks using chezmoi
+chezmoi init --apply --verbose https://github.com/otaviotech/dotfiles.git
 
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
