@@ -1,0 +1,9 @@
+[user]
+	name = Otávio Pardim
+	email = otaviotech@gmail.com
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[init]
+	defaultBranch = main

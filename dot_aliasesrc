@@ -1,0 +1,69 @@
+#!/bin/bash
+
+# Shortcuts
+alias reloadrc='source ~/.zshrc'
+alias editrc='vim ~/.zshrc'
+alias editaliases='vim ~/.aliasesrc'
+
+# Navigation typo catchers
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias cd.='cd ..'
+alias cd..='cd ..'
+alias cd...='cd ../../'
+alias cd....='cd ../../../'
+alias cd.....='cd ../../../../'
+
+# Commands defaults
+alias c='clear'
+alias l='exa --all --long --git --no-time --header --icons --colour-scale --classify'
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias which='type -p'
+alias cat='bat'
+
+# Common directories
+alias cdd="cd $HOME/Downloads"
+alias cdsrc="cd $SOURCES_ROOT"
+alias cdcb="cd $SOURCES_ROOT/boticario/campaigns/campaigns-backend"
+alias cdcf="cd $SOURCES_ROOT/boticario/campaigns/campaigns-frontend"
+alias cdigc="cd $SOURCES_ROOT/oss/instagram-clone"
+
+# Yarn
+alias yrd="yarn run dev"
+alias yrsd="yarn run start:dev"
+alias yrb="yarn run build"
+alias yrl="yarn run lint"
+alias yrs="yarn run start"
+alias yrt="yarn run test"
+alias yrtdd="yarn run tdd"
+alias yru="yarn run unit"
+
+# NPM
+alias nrd="npm run dev"
+alias nrsd="npm run start:dev"
+alias nrb="npm run build"
+alias nrl="npm run lint"
+alias nrs="npm run start"
+alias nrt="npm run test"
+
+# Docker
+alias dps="docker ps --format \"table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}\""
+alias dcupd="docker compose up -d"
+alias dsa='docker stop $(docker ps -q)'
+alias drma='dsa && docker rm $(docker ps -q)'
+
+# Kubernetes
+alias k="kubectl"
+
+alias mypublicip='curl ifconfig.me'
+alias mylocalip='ipconfig getifaddr en1'
+
+# Easier HTTP requests
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+	alias "${method}"="lwp-request -m '${method}'"
+done
