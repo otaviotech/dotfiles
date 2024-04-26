@@ -10,9 +10,7 @@ Run the automated installation. This will setup **almost** everything.
 
 ```shell
 cd ~
-wget https://github.com/otaviotech/dotfiles/blob/main/install-macos.sh
-chmod +x install-macos.sh
-./install-macos.sh
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply otaviotech
 cd -
 ```
 # Manual steps

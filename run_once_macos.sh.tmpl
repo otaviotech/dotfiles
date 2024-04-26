@@ -1,5 +1,10 @@
 #!/bin/bash
 
+{{ if ne .chezmoi.os "darwin" }}
+echo "This script is intended to be run on macOS only."
+exit 0
+{{ end }}
+
 set -o errexit  # abort on nonzero exitstatus
 set -o nounset  # abort on unbound variable
 set -o pipefail # don't hide errors within pipes
@@ -93,9 +98,6 @@ defaults delete -g ApplePressAndHoldEnabled
 echo "Restarting macOS UI and Dock..."
 killall Dock
 killall SystemUIServer
-
-# Create dotfiles symlinks using chezmoi
-chezmoi init --apply --verbose https://github.com/otaviotech/dotfiles.git
 
 GREEN='\033[0;32m'
 NC='\033[0m' # No Color
