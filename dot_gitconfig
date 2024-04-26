@@ -1,9 +1,16 @@
 [user]
-	name = Otávio Pardim
-	email = otaviotech@gmail.com
+  name = Otávio Pardim
+  email = otaviotech@gmail.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEDA0b9SV32peReZ8rGi9j/IHLi8tsmc4R8OpzBiLkgr
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
 [commit]
-	gpgsign = true
-[tag]
-	gpgSign = true
+  gpgsign = true
+
 [init]
-	defaultBranch = main
+  defaultBranch = main
