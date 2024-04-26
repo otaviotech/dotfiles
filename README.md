@@ -15,4 +15,9 @@ chmod +x install-macos.sh
 ./install-macos.sh
 cd -
 ```
+# Manual steps
+
+After restarting the terminal, don't forget to:
+
+- install tmux plugins by pressing `prefix + I` (`<ctrl + a> + I`).
 

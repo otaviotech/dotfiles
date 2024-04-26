@@ -5,19 +5,15 @@ set -o nounset  # abort on unbound variable
 set -o pipefail # don't hide errors within pipes
 
 # Install CommandLineTools
-#sudo rm -rf /Library/Developer/CommandLineTools
-#sudo xcode-select --install
+sudo rm -rf /Library/Developer/CommandLineTools
+sudo xcode-select --install
 
 # Install homebrew (https://brew.sh)
 echo "Installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing base packages..."
-brew bundle
-
-# Make zsh the default shell
-echo "Making zsh the default shell..."
-chsh -s $(which zsh)
+brew bundle -v
 
 # Install oh-my-zsh (unnatended install)
 echo "Installing oh-my-zsh..."
@@ -106,13 +102,7 @@ NC='\033[0m' # No Color
 
 echo -e "${GREEN}Success!${NC}\n"
 
-echo "Not all software have been installed yet."
-echo "Please be aware that the following softare is missing and need to be installed:"
-echo ""
-
-bat ~/dotfiles/manual-install-macos.csv
-
-echo "Restart and you are all set!"
+echo "Restart your terminal and you are all set!"
 echo -e "${GREEN}Happy Hacking!\n"
 
 exit 0
