@@ -4,29 +4,16 @@ set -o errexit  # abort on nonzero exitstatus
 set -o nounset  # abort on unbound variable
 set -o pipefail # don't hide errors within pipes
 
+# Install CommandLineTools
+#sudo rm -rf /Library/Developer/CommandLineTools
+#sudo xcode-select --install
+
 # Install homebrew (https://brew.sh)
 echo "Installing homebrew..."
-curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing base packages..."
-brew install zsh \
-	vim neovim \
-	wget \
-	git gh \
-	stow \
-	tmux exa bat eth-p/software/bat-extras-prettybat \
-	ripgrep \
-	gnupg \
-	fx jq yq \
-	chezmoi
-
-# Install Google Chrome
-echo "Installing Google Chrome..."
-brew install --cask google-chrome
-
-# Install raycast (www.raycast.com)
-echo "Installing raycast..."
-brew install --cask raycast
+brew bundle
 
 # Make zsh the default shell
 echo "Making zsh the default shell..."
