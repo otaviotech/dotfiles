@@ -18,6 +18,12 @@ brew "bat"
 brew "eth-p/software/bat-extras-prettybat"
 brew "fd"
 
+# zsh plugins
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
+brew "zsh-completions"
+brew "powerlevel10k"
+
 # File manipulation
 brew "fx"
 brew "jq"
@@ -26,12 +32,17 @@ brew "ripgrep"
 
 # Terminal multiplexer
 brew "tmux"
+brew "tpm"
 
 # Text editor
 brew "neovim"
 
 # Dotfiles
 brew "chezmoi"
+
+# Programming Languages
+brew "go"
+brew "nvm"
 
 # Browser
 cask "google-chrome"

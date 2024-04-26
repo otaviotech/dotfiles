@@ -2,3 +2,4 @@ export EDITOR="nvim"
 export SOURCES_ROOT="$HOME/sources"
 export NVM_DIR="$HOME/.nvm"
 export GPG_TTY=$(tty)
+
