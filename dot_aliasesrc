@@ -25,6 +25,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias which='type -p'
 alias cat='bat'
+alias find='fd'
 
 # Common directories
 alias cdd="cd $HOME/Downloads"

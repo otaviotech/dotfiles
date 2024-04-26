@@ -16,6 +16,7 @@ brew "jesseduffield/lazygit/lazygit"
 brew "eza"
 brew "bat"
 brew "eth-p/software/bat-extras-prettybat"
+brew "fd"
 
 # File manipulation
 brew "fx"
