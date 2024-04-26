@@ -29,9 +29,6 @@ brew "tmux"
 # Text editor
 brew "neovim"
 
-# Fonts
-cask "font-fira-code-nerd-font"
-
 # Dotfiles
 brew "chezmoi"
 
@@ -41,5 +38,11 @@ cask "google-chrome"
 # Spotlight replacement
 cask "raycast"
 
+# Fonts
+cask "font-fira-code-nerd-font"
+
 # Terminal emulator
 cask "kitty"
+
+# Window manager
+cask "rectangle"
