@@ -632,6 +632,8 @@
         }
       },
       "jesseduffield/lazygit/lazygit": {
+        "version": "0.41.0",
+        "bottle": false
       }
     },
     "cask": {
@@ -646,6 +648,41 @@
         "options": {
           "full_name": "raycast"
         }
+      },
+      "font-fira-code-nerd-font": {
+        "version": "3.2.1",
+        "options": {
+          "full_name": "font-fira-code-nerd-font"
+        }
+      },
+      "kitty": {
+        "version": "0.34.1",
+        "options": {
+          "full_name": "kitty"
+        }
+      },
+      "rectangle": {
+        "version": "0.76",
+        "options": {
+          "full_name": "rectangle"
+        }
+      },
+      "1password": {
+        "version": "8.10.30",
+        "options": {
+          "full_name": "1password"
+        }
+      },
+      "spotify": {
+        "version": "1.2.35.663,b699649e,5726",
+        "options": {
+          "full_name": "spotify"
+        }
+      }
+    },
+    "tap": {
+      "homebrew/cask-fonts": {
+        "revision": "5dbe07c7e101165698b5f60ffb0b72d438410e7e"
       }
     }
   },

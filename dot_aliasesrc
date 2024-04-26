@@ -33,6 +33,11 @@ alias cdcb="cd $SOURCES_ROOT/boticario/campaigns/campaigns-backend"
 alias cdcf="cd $SOURCES_ROOT/boticario/campaigns/campaigns-frontend"
 alias cdigc="cd $SOURCES_ROOT/oss/instagram-clone"
 
+# Chezmoi
+alias cz='chezmoi'
+alias cze='chezmoi edit --apply'
+alias czcd='chezmoi cd'
+
 # Yarn
 alias yrd="yarn run dev"
 alias yrsd="yarn run start:dev"

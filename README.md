@@ -16,6 +16,3 @@ chmod +x install-macos.sh
 cd -
 ```
 
-2. At the end of the first command, a list of softwares will be shown. Unfortunately, we need to install them manually.
-
-![Image of a list of softwares that need to be installed manually](/manual-install.png "List of files that need to be installed manually")

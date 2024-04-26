@@ -46,3 +46,22 @@ cask "kitty"
 
 # Window manager
 cask "rectangle"
+
+# Password manager
+cask "1password"
+
+# Spotify
+cask "spotify"
+
+# Docker
+cask "docker"
+
+# Spaced repetition software
+cask "anki"
+
+# Note taking
+cask "obsidian"
+cask "notion"
+
+# Design
+cask "figma"
