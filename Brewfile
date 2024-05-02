@@ -80,3 +80,6 @@ cask "figma"
 
 # Logitech
 cask "logi-options-plus"
+
+# Communication
+cask "whatsapp"
