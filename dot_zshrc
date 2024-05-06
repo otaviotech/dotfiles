@@ -7,14 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-plugins=(
-	git
-	docker
-	zsh-better-npm-completion
-)
-
 # Load environment variables
 [ -f ~/.envrc ] && source ~/.envrc
 
@@ -27,6 +19,7 @@ plugins=(
 # ZSH plugins
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # zsh-completions plugin
@@ -36,4 +29,14 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+
+# Key bindings for history-substring-search plugin
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey '^p' history-substring-search-up
+bindkey '^n' history-substring-search-down
+
+# Key bindings for zsh-autosuggestions plugin
+bindkey '^e' autosuggest-accept  # Accepts the current suggestion.
+bindkey '^[[C' forward-word        # Accepts the next part of the suggestion.
 

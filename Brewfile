@@ -21,6 +21,7 @@ brew "fd"
 # zsh plugins
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
+brew "zsh-history-substring-search"
 brew "zsh-completions"
 brew "powerlevel10k"
 
