@@ -1,9 +1,14 @@
 #!/bin/bash
 
+# Chezmoi
+alias cz='chezmoi'
+alias cze='chezmoi edit --apply'
+alias czcd='chezmoi cd'
+
 # Shortcuts
 alias reloadrc='source ~/.zshrc'
-alias editrc='vim ~/.zshrc'
-alias editaliases='vim ~/.aliasesrc'
+alias editrc='cze ~/.zshrc'
+alias editaliases='cze ~/.aliasesrc'
 
 # Navigation typo catchers
 alias ..='cd ..'
@@ -30,14 +35,25 @@ alias find='fd'
 # Common directories
 alias cdd="cd $HOME/Downloads"
 alias cdsrc="cd $SOURCES_ROOT"
-alias cdcb="cd $SOURCES_ROOT/boticario/campaigns/campaigns-backend"
-alias cdcf="cd $SOURCES_ROOT/boticario/campaigns/campaigns-frontend"
-alias cdigc="cd $SOURCES_ROOT/oss/instagram-clone"
 
-# Chezmoi
-alias cz='chezmoi'
-alias cze='chezmoi edit --apply'
-alias czcd='chezmoi cd'
+# Git
+alias g='git'
+alias gcl='git clone'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gst='git status'
+alias gss='git status -s'
+alias gcm='git commit -m'
+alias gcam='git commit -a -m'
+alias gpu='git push -u origin'
+alias gp='git push'
+alias gl='git pull'
+alias grb='git rebase'
+alias grbi='git rebase -i'
+alias grbia='git rebase -i --autosquash'
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 
 # Yarn
 alias yrd="yarn run dev"
