@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 # Chezmoi
 alias cz='chezmoi'
@@ -54,6 +54,8 @@ alias grbia='git rebase -i --autosquash'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias lg="lazygit"
+
 
 # Yarn
 alias yrd="yarn run dev"
