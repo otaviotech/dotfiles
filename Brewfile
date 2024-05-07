@@ -3,6 +3,11 @@ tap "homebrew/cask-fonts"
 # App Store CLI
 brew "mas"
 
+# Dependencies
+brew "coreutils" # required by asdf
+brew "gpg" # required by asdf-nodejs
+brew "gawk" # required by asdf-nodejs
+
 # HTTP clients
 brew "wget"
 brew "curl"
@@ -42,8 +47,7 @@ brew "neovim"
 brew "chezmoi"
 
 # Programming Languages
-brew "go"
-brew "nvm"
+brew "asdf"
 
 # Browser
 cask "google-chrome"

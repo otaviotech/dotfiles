@@ -1,0 +1,2 @@
+# read from .nvmrc as well
+legacy_version_file = yes
