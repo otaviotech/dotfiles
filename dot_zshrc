@@ -24,10 +24,13 @@ source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 source $(brew --prefix asdf)/libexec/asdf.sh
 source $HOME/.asdf/plugins/golang/set-env.zsh
 
+# Completions folder
+mkdir -p $HOME/.zsh_completions
+FPATH=$HOME/.zsh_completions:$FPATH
+
 # zsh-completions plugin
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
   autoload -Uz compinit
   compinit
 fi
@@ -41,4 +44,7 @@ bindkey '^n' history-substring-search-down
 # Key bindings for zsh-autosuggestions plugin
 bindkey '^e' autosuggest-accept  # Accepts the current suggestion.
 bindkey '^[[C' forward-word        # Accepts the next part of the suggestion.
+
+# Case-insensitive tab completion
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 

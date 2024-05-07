@@ -49,6 +49,8 @@ brew "chezmoi"
 # Programming Languages
 brew "asdf"
 
+brew "golangci-lint"
+
 # Browser
 cask "google-chrome"
 
