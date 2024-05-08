@@ -14,6 +14,7 @@ fi
 
 # Load aliases
 [ -f ~/.aliasesrc ] && source ~/.aliasesrc
+[ -f ~/.private_aliasesrc ] && source ~/.private_aliasesrc
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
