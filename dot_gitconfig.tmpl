@@ -1,7 +1,12 @@
 [user]
   name = Otávio Pardim
+  {{ if eq .chezmoi.hostname "Otavios-iMac" }}
   email = otaviotech@gmail.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEDA0b9SV32peReZ8rGi9j/IHLi8tsmc4R8OpzBiLkgr
+  {{ else }}
+  email = otavio.pardim@emma-sleep.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM2N5H9C7BS4wofeowocMojxtBRERwZmQ6eW1igKUJxg
+  {{ end }}
 
 [gpg]
   format = ssh

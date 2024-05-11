@@ -1,0 +1,6 @@
+[[ssh-keys]]
+{{ if eq .chezmoi.hostname "Otavios-iMac" }}
+vault = "Personal"
+{{ else }}
+vault = "Emma"
+{{ end }}
