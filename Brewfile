@@ -51,6 +51,8 @@ brew "asdf"
 
 brew "golangci-lint"
 
+brew "delve"
+
 # Browser
 cask "google-chrome"
 
