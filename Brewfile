@@ -35,6 +35,7 @@ brew "fx"
 brew "jq"
 brew "yq"
 brew "ripgrep"
+brew "trash"
 
 # Terminal multiplexer
 brew "tmux"
