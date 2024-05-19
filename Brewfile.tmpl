@@ -72,6 +72,11 @@ cask "rectangle"
 # Password manager
 cask "1password"
 
+{{ if eq .chezmoi.hostname "Otavios-iMac" }}
+# VPN
+cask "nordvpn"
+{{ end }}
+
 # Spotify
 cask "spotify"
 
