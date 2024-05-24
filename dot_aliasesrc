@@ -32,6 +32,7 @@ alias which='type -p'
 alias cat='bat'
 alias find='fd'
 alias rm='trash -F'
+alias top='btm'
 
 
 # Common directories
