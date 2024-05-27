@@ -21,6 +21,7 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ZSH plugins
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -39,16 +40,28 @@ if type brew &>/dev/null; then
   compinit
 fi
 
+# History
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
 # Key bindings for history-substring-search plugin
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 bindkey '^p' history-substring-search-up
 bindkey '^n' history-substring-search-down
 
 # Key bindings for zsh-autosuggestions plugin
 bindkey '^e' autosuggest-accept  # Accepts the current suggestion.
-bindkey '^[[C' forward-word        # Accepts the next part of the suggestion.
+bindkey '^f' forward-word        # Accepts the next part of the suggestion.
 
-# Case-insensitive tab completion
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+# Completion 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # Case-insensitive tab completion.
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Make tab completion colorful.
 
