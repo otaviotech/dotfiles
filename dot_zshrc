@@ -36,6 +36,7 @@ FPATH=$HOME/.zsh_completions:$FPATH
 # zsh-completions plugin
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  FPATH=$SOURCES_ROOT/own/fin/bin:$FPATH
   autoload -Uz compinit
   compinit
 fi
@@ -54,8 +55,8 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Key bindings for history-substring-search plugin
-bindkey '^p' history-substring-search-up
-bindkey '^n' history-substring-search-down
+bindkey '^P' history-substring-search-up
+bindkey '^N' history-substring-search-down
 
 # Key bindings for zsh-autosuggestions plugin
 bindkey '^e' autosuggest-accept  # Accepts the current suggestion.

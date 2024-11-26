@@ -6,7 +6,9 @@ return {
 			gopls = {
 				settings = {
 					gopls = {
+            gofumpt = true,
 						env = { GOFLAGS = "-tags=unit,integration" },
+						analyses = { fieldalignment = false, unusedparams = true },
 					},
 				},
 			},

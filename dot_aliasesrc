@@ -57,6 +57,7 @@ alias grbia='git rebase -i --autosquash'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias glol="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias gf="git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
 alias lg="lazygit"
 
 
