@@ -1,6 +1,8 @@
 [[ssh-keys]]
-{{ if eq .chezmoi.hostname "Otavios-iMac" }}
-vault = "Personal"
-{{ else }}
-vault = "Emma"
-{{ end }}
+  {{- with env "WHEREAMI" }}
+    {{- if eq . "home" }}
+  vault = "Personal"
+    {{- else if "work" }}
+  vault = "Emma"
+    {{- end }}
+  {{- end }}

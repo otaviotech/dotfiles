@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+export WHEREAMI="work"
+
 # SSH Agent
 export SSH_AUTH_SOCK=$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 export EDITOR="nvim"
@@ -12,4 +14,14 @@ export PATH="$PATH:$SOURCES_ROOT/own/fin/bin"
 # asdf
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
+gohome ()
+{
+  export WHEREAMI="home"
+  cz apply
+}
 
+gowork ()
+{
+  export WHEREAMI="work"
+  cz apply
+}
