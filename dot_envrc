@@ -1,6 +1,27 @@
 #!/usr/bin/env zsh
 
-export WHEREAMI="work"
+set_location() {
+  local location="$1"
+  echo "${location:-home}" > $HOME/.whereami
+  export WHEREAMI=$(wmi)
+  chezmoi apply --init
+  source ~/.zshrc
+}
+
+gohome() {
+  set_location "home"
+}
+
+gowork() {
+  set_location "work"
+}
+
+wmi() {
+  local wmi=$(<$HOME/.whereami)
+  echo "${wmi:-home}"
+}
+
+export WHEREAMI=$(wmi)
 
 # SSH Agent
 export SSH_AUTH_SOCK=$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
@@ -15,14 +36,3 @@ export PATH="$PATH:/usr/local/bin/pulumi"
 # asdf
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
-gohome ()
-{
-  export WHEREAMI="home"
-  cz apply
-}
-
-gowork ()
-{
-  export WHEREAMI="work"
-  cz apply
-}

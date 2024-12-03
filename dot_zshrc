@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Attach to an existing tmux session or create a new one
-[ -z "$TMUX" ] && exec tmux new -As main
+# [ -z "$TMUX" ] && exec tmux new -As main
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -10,12 +10,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Load environment variables
-[ -f ~/.envrc ] && source ~/.envrc
-
 # Load aliases
 [ -f ~/.aliasesrc ] && source ~/.aliasesrc
 [ -f ~/.private_aliasesrc ] && source ~/.private_aliasesrc
+
+# Load environment variables
+[ -f ~/.envrc ] && source ~/.envrc
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
