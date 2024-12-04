@@ -2,7 +2,7 @@
 
 # Chezmoi
 alias cz='chezmoi'
-alias cze='chezmoi edit --apply && reloadrc'
+alias cze='chezmoi edit --apply'
 alias czcd='chezmoi cd'
 
 # Shortcuts

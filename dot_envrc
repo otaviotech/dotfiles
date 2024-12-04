@@ -32,6 +32,8 @@ export GPG_TTY=$(tty)
 export PATH="$PATH:$SOURCES_ROOT/fin/bin"
 export PATH="$PATH:$SOURCES_ROOT/own/fin/bin"
 export PATH="$PATH:/usr/local/bin/pulumi"
+export PATH="$PATH:/opt/nvim/nvim-macos-x86_64/bin"
+export PATH="$PATH:/opt/nvim/nvim-macos-arm64/bin"
 
 # asdf
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
