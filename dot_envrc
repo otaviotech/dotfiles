@@ -29,13 +29,15 @@ export EDITOR="nvim"
 export SOURCES_ROOT="$HOME/sources"
 export GPG_TTY=$(tty)
 
-export PATH="/opt/homebrew/opt/trash/bin:$PATH"
+export PATH="$PATH:/opt/homebrew/bin"
+export PATH="$PATH:/opt/nvim/bin"
+export PATH="$PATH:/opt/homebrew/opt/trash/bin"
 export PATH="$PATH:$SOURCES_ROOT/fin/bin"
 export PATH="$PATH:$SOURCES_ROOT/own/fin/bin"
 export PATH="$PATH:/usr/local/bin/pulumi"
 export PATH="$PATH:/opt/nvim/nvim-macos-x86_64/bin"
 export PATH="$PATH:/opt/nvim/nvim-macos-arm64/bin"
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="$PATH:${ASDF_DATA_DIR:-$HOME/.asdf}/shims"
 
 # asdf
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
